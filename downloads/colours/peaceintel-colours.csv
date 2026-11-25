@@ -1,0 +1,12 @@
+Name,HEX,R,G,B,C,M,Y,K,Use
+Paper,#FCFCFB,252,252,251,2,1,2,0,"Page background. The ground of everything."
+Paper Warm,#F3EFE7,243,239,231,6,5,9,0,"Callouts and highlighted notes only. Also the light text colour on dark."
+Ink,#141310,20,19,16,78,72,74,97,"Headlines, body text, the logo. The strongest emphasis the brand has."
+Ink 70,#4B463E,75,70,62,70,66,76,44,"Secondary body text."
+Ink 55,#706B63,112,107,99,56,50,57,22,"Captions, labels, muted text. The lightest grey allowed for text."
+Ink 35,#8C877F,140,135,127,48,41,47,9,"Icons and rules only, never text."
+Dark Band,#1C1A16,28,26,22,76,73,77,94,"Dark sections: the closing call to action, a single claim, the footer."
+Dark Ink 70,#B9B3A9,185,179,169,31,26,32,0,"Secondary text on a dark band."
+Orange,#D9481C,217,72,28,3,84,100,4,"The one accent. Graphics, fills, rules, and type 24px and above."
+Orange Text,#C04019,192,64,25,9,86,100,11,"Orange text smaller than 24px on light backgrounds."
+Orange Light,#F77524,247,117,36,0,67,97,0,"The accent on a dark band."

@@ -1,0 +1,296 @@
+/* PeaceCon brand kit. Layout for this page only, built on the brand's own
+   tokens.css and components.css. Every value is a token. */
+
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--sp-16) + var(--sp-4)) }
+body { background: var(--bg); color: var(--ink); font-family: var(--sans) }
+
+/* ── top bar ── */
+.kit-bar { position: sticky; top: 0; z-index: 10; background: var(--bg); border-bottom: 1px solid var(--line) }
+.kit-bar .wrap { display: flex; align-items: center; gap: var(--sp-8); height: var(--sp-16) }
+.kit-bar img { height: var(--sp-6); width: auto; flex: none }
+.kit-nav { display: flex; gap: var(--sp-6); overflow-x: auto; scrollbar-width: none; margin-left: auto }
+.kit-nav::-webkit-scrollbar { display: none }
+.kit-nav a { flex: none; font-family: var(--mono); font-size: var(--eb-3); letter-spacing: var(--eb-3-ls); text-transform: uppercase; color: var(--ink-55); text-decoration: none; padding: var(--sp-2) 0; border-bottom: 2px solid transparent }
+.kit-nav a:hover { color: var(--ink) }
+.kit-nav a.on { color: var(--ink); border-bottom-color: var(--ink) }
+
+/* ── hero ── */
+.kit-hero { padding: var(--sp-22) 0 var(--sp-18) }
+.kit-hero h1 { margin-top: var(--sp-5); font-family: var(--serif); font-weight: var(--serif-w); font-size: var(--t-display); line-height: var(--t-display-lh); max-width: 16ch; text-wrap: balance }
+.kit-hero .lede { margin-top: var(--sp-6); font-size: var(--t-lead); line-height: var(--t-lead-lh); color: var(--ink-70); max-width: 58ch }
+.kit-hero .lk-actions { display: flex; gap: var(--sp-3); flex-wrap: wrap; margin-top: var(--sp-8) }
+.kit-hero-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: var(--sp-12); align-items: end }
+.kit-hero-grid img { width: 100%; height: auto }
+.kit-toc { margin-top: var(--sp-16); display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--line-2) }
+.kit-toc a { display: block; padding: var(--sp-5) var(--sp-5) var(--sp-5) 0; text-decoration: none; color: var(--ink); border-bottom: 1px solid var(--line) }
+.kit-toc a span { display: block; font-family: var(--mono); font-size: var(--eb-4); letter-spacing: var(--eb-4-ls); text-transform: uppercase; color: var(--ink-55) }
+.kit-toc a b { display: block; margin-top: var(--sp-1); font-family: var(--serif); font-weight: var(--serif-w); font-size: var(--t-h4); line-height: var(--t-h4-lh) }
+.kit-toc a:hover b { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px }
+
+/* ── section heads ── */
+.kit-sec .sec-head .kicker { margin-bottom: var(--sp-4) }
+.kit-sub { margin: var(--sp-16) 0 var(--sp-6); padding-top: var(--sp-5); border-top: 1px solid var(--line-2); display: flex; justify-content: space-between; align-items: baseline; gap: var(--sp-6); flex-wrap: wrap }
+.kit-sub h3 { font-family: var(--serif); font-weight: var(--serif-w); font-size: var(--t-h3); line-height: var(--t-h3-lh) }
+.kit-sub p { font-size: var(--t-body); color: var(--ink-70); max-width: 60ch }
+.kit-sub:first-child, .sec-head + .kit-sub { margin-top: 0 }
+
+/* ── rules list (do / avoid) ── */
+.kit-rules { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 var(--sp-10) }
+.kit-rules li { list-style: none; padding: var(--sp-4) 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: var(--sp-8) 1fr; font-size: var(--t-body); line-height: var(--t-body-lh); color: var(--ink-70) }
+.kit-rules li b { color: var(--ink); font-weight: 600 }
+.kit-rules li::before { content: counter(rule, decimal-leading-zero); counter-increment: rule; font-family: var(--mono); font-size: var(--eb-3); letter-spacing: var(--eb-3-ls); color: var(--ink-55); padding-top: 3px }
+.kit-rules { counter-reset: rule }
+.kit-dont li::before { content: "×"; font-family: var(--mono); font-size: var(--t-body); color: var(--ink-55); padding-top: 0 }
+
+/* ── downloads row ── */
+.kit-dl { display: flex; flex-wrap: wrap; gap: var(--sp-2); margin-top: var(--sp-5) }
+.kit-dl a { display: inline-flex; align-items: center; gap: var(--sp-2); padding: var(--sp-2) var(--sp-3); border: 1px solid var(--line-2); border-radius: var(--r-md); font-family: var(--mono); font-size: var(--eb-3); letter-spacing: var(--eb-3-ls); text-transform: uppercase; color: var(--ink); text-decoration: none; background: var(--face) }
+.kit-dl a:hover { border-color: var(--ink-35) }
+.kit-dl a::before { content: "↓"; font-family: var(--sans); letter-spacing: 0 }
+.kit-dl a small { color: var(--ink-55); font-size: inherit; letter-spacing: inherit }
+
+/* ── logo ── */
+.kit-logo-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sp-6) }
+.kit-tile { border: var(--edge); border-radius: var(--r-md); background: var(--face); overflow: hidden }
+.kit-tile .stage { display: grid; place-items: center; padding: var(--sp-16) var(--sp-10); min-height: 260px }
+.kit-tile .stage img { max-width: 100%; height: auto }
+.kit-tile .meta { padding: var(--sp-4) var(--sp-5); border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: var(--sp-4); align-items: baseline; flex-wrap: wrap }
+.kit-tile .meta b { font-weight: 600; font-size: var(--t-ui) }
+.kit-tile .meta span { font-family: var(--mono); font-size: var(--eb-4); letter-spacing: var(--eb-4-ls); text-transform: uppercase; color: var(--ink-55) }
+.kit-tile.dark { background: var(--pi-dark-band); border-color: var(--pi-dark-band) }
+.kit-tile.dark .meta { border-top-color: rgba(243, 239, 231, .12) }
+.kit-tile.dark .meta b { color: var(--pi-dark-ink) }
+.kit-tile.dark .meta span { color: var(--pi-dark-600) }
+.kit-tile.ground .stage { background: var(--ground) }
+
+.kit-space { position: relative; display: inline-block; padding: 0 }
+.kit-space img { display: block; height: 120px; width: auto; outline: 1px dashed var(--accent); outline-offset: 0 }
+.kit-space::before { content: ""; position: absolute; inset: -60px; border: 1px dashed var(--ink-35); background: repeating-linear-gradient(45deg, transparent 0 6px, var(--wash-1) 6px 7px) }
+.kit-space-wrap { display: grid; place-items: center; padding: var(--sp-22) var(--sp-10) }
+.kit-specs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--sp-6); margin-top: var(--sp-6) }
+.kit-spec { border-top: 1px solid var(--line-2); padding-top: var(--sp-4) }
+.kit-spec span { display: block; font-family: var(--mono); font-size: var(--eb-4); letter-spacing: var(--eb-4-ls); text-transform: uppercase; color: var(--ink-55) }
+.kit-spec b { display: block; margin-top: var(--sp-2); font-family: var(--serif); font-weight: var(--serif-w); font-size: var(--t-h3); line-height: var(--t-h3-lh) }
+.kit-spec p { margin-top: var(--sp-2); font-size: var(--t-ui); line-height: var(--t-ui-lh); color: var(--ink-70) }
+
+.kit-partners { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sp-6) }
+.kit-partners .stage { min-height: 200px }
+.kit-partners .stage img { max-height: 80px; width: auto }
+
+/* ── colour ── */
+.kit-swatches { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--sp-5) }
+.kit-sw { border: var(--edge); border-radius: var(--r-md); overflow: hidden; background: var(--face); display: flex; flex-direction: column }
+.kit-sw .chip { height: 120px; border-bottom: 1px solid var(--line) }
+.kit-sw .body { padding: var(--sp-4); display: flex; flex-direction: column; gap: var(--sp-2); flex: 1 }
+.kit-sw h4 { font-family: var(--serif); font-weight: var(--serif-w); font-size: var(--t-h4); line-height: var(--t-h4-lh) }
+.kit-sw dl { display: grid; grid-template-columns: auto 1fr; gap: 2px var(--sp-3); font-family: var(--mono); font-size: var(--eb-3); letter-spacing: .02em }
+.kit-sw dt { color: var(--ink-55) }
+.kit-sw dd { color: var(--ink); margin: 0 }
+.kit-sw p { font-size: var(--t-ui); line-height: var(--t-ui-lh); color: var(--ink-70); margin-top: auto; padding-top: var(--sp-2) }
+.kit-sw .copy { align-self: flex-start }
+.kit-sw.wide { grid-column: span 2 }
+
+.kit-ratio { display: flex; height: var(--sp-16); border: var(--edge); border-radius: var(--r-md); overflow: hidden }
+.kit-ratio > div { display: flex; align-items: flex-end; padding: var(--sp-2); font-family: var(--mono); font-size: var(--eb-4); letter-spacing: var(--eb-4-ls); text-transform: uppercase }
+.kit-pairs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--sp-5) }
+.kit-pair { border-radius: var(--r-md); padding: var(--sp-6); border: var(--edge) }
+.kit-pair b { display: block; font-family: var(--serif); font-weight: var(--serif-w); font-size: var(--t-h3); line-height: var(--t-h3-lh) }
+.kit-pair p { margin-top: var(--sp-2); font-size: var(--t-ui); line-height: var(--t-ui-lh) }
+.kit-pair span { display: block; margin-top: var(--sp-4); font-family: var(--mono); font-size: var(--eb-4); letter-spacing: var(--eb-4-ls); text-transform: uppercase; opacity: .75 }
+
+/* ── type ── */
+.kit-face { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: var(--sp-10); padding: var(--sp-10) 0; border-top: 1px solid var(--line-2) }
+.kit-face:first-of-type { border-top: 0; padding-top: 0 }
+.kit-face h4 { font-family: var(--mono); font-size: var(--eb-2); letter-spacing: var(--eb-2-ls); text-transform: uppercase; color: var(--ink-55) }
+.kit-face .name { margin-top: var(--sp-3); font-size: var(--t-h2); line-height: var(--t-h2-lh) }
+.kit-face .role { margin-top: var(--sp-3); font-size: var(--t-body); line-height: var(--t-body-lh); color: var(--ink-70) }
+.kit-face .lic { margin-top: var(--sp-3); font-family: var(--mono); font-size: var(--eb-4); letter-spacing: var(--eb-4-ls); text-transform: uppercase; color: var(--ink-55) }
+.kit-glyphs { font-size: 96px; line-height: 1.05; letter-spacing: -.01em; color: var(--ink); overflow-wrap: anywhere }
+.kit-alpha { margin-top: var(--sp-5); font-size: var(--t-h3); line-height: 1.5; color: var(--ink-70); word-break: break-word }
+.kit-weights { margin-top: var(--sp-5); display: flex; flex-wrap: wrap; gap: var(--sp-2) var(--sp-6); font-size: var(--t-h4); color: var(--ink) }
+.kit-weights span { white-space: nowrap }
+.f-serif { font-family: var(--serif); font-weight: var(--serif-w) }
+.f-sans { font-family: var(--sans) }
+.f-mono { font-family: var(--mono) }
+
+.kit-scale { width: 100%; border-collapse: collapse }
+.kit-scale th, .kit-scale td { text-align: left; padding: var(--sp-4) var(--sp-4) var(--sp-4) 0; border-top: 1px solid var(--line); vertical-align: baseline }
+.kit-scale th { font-family: var(--mono); font-weight: 400; font-size: var(--eb-4); letter-spacing: var(--eb-4-ls); text-transform: uppercase; color: var(--ink-55); border-top: 0 }
+.kit-scale td.spec { font-family: var(--mono); font-size: var(--eb-3); letter-spacing: .02em; color: var(--ink-70); white-space: nowrap }
+.kit-scale td.sample { width: 60% }
+.kit-scroll { overflow-x: auto }
+
+/* ── pairings ── */
+.kit-pairing { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); border: var(--edge); border-radius: var(--r-md); overflow: hidden; background: var(--face); margin-bottom: var(--sp-6) }
+.kit-pairing .demo { padding: var(--sp-14) var(--sp-12) }
+.kit-pairing .demo.on-dark { background: var(--pi-dark-band) }
+.kit-pairing .demo.ground { background: var(--ground) }
+.kit-pairing .anno { padding: var(--sp-8); border-left: 1px solid var(--line); display: flex; flex-direction: column; gap: var(--sp-3) }
+.kit-pairing .anno h4 { font-family: var(--serif); font-weight: var(--serif-w); font-size: var(--t-h4); line-height: var(--t-h4-lh) }
+.kit-pairing .anno ol { padding: 0; margin: 0; list-style: none; display: grid; gap: var(--sp-3) }
+.kit-pairing .anno li { font-size: var(--t-ui); line-height: var(--t-ui-lh); color: var(--ink-70); padding-left: var(--sp-6); position: relative }
+.kit-pairing .anno li i { position: absolute; left: 0; top: 1px; font-style: normal; font-family: var(--mono); font-size: var(--eb-4); color: var(--ink-55) }
+.kit-pairing .anno li code { font-family: var(--mono); font-size: var(--eb-3); color: var(--ink) }
+.kit-pairing .anno .copy { margin-top: auto; align-self: flex-start }
+
+.d-kick { font-family: var(--mono); font-size: var(--eb-1); letter-spacing: var(--eb-1-ls); text-transform: uppercase; color: var(--ink-55) }
+.d-display { margin-top: var(--sp-5); font-family: var(--serif); font-weight: var(--serif-w); font-size: var(--t-display); line-height: var(--t-display-lh); text-wrap: balance; max-width: 15ch }
+.d-h2 { margin-top: var(--sp-4); font-family: var(--serif); font-weight: var(--serif-w); font-size: var(--t-h1); line-height: var(--t-h1-lh); text-wrap: balance; max-width: 18ch }
+.d-lead { margin-top: var(--sp-5); font-size: var(--t-lead); line-height: var(--t-lead-lh); color: var(--ink-70); max-width: 46ch }
+.d-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--sp-6) }
+.d-stats div { border-top: 1px solid var(--line-2); padding-top: var(--sp-4) }
+.d-stats b { display: block; font-family: var(--serif); font-weight: var(--serif-w); font-size: var(--t-h1); line-height: 1; font-variant-numeric: lining-nums }
+.d-stats span { display: block; margin-top: var(--sp-3); font-family: var(--mono); font-size: var(--eb-4); letter-spacing: var(--eb-4-ls); text-transform: uppercase; color: var(--ink-55) }
+.d-claim { border-left: 2px solid var(--accent); padding-left: var(--sp-6) }
+.d-claim p { font-family: var(--serif); font-weight: var(--serif-w); font-size: var(--t-h2); line-height: var(--t-h2-lh); max-width: 26ch }
+.d-claim cite { display: block; margin-top: var(--sp-4); font-style: normal; font-family: var(--mono); font-size: var(--eb-3); letter-spacing: var(--eb-3-ls); text-transform: uppercase; color: var(--ink-55) }
+.d-ledger { margin-top: var(--sp-8); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 var(--sp-8) }
+.d-ledger div { border-top: 1px solid var(--line-2); padding: var(--sp-4) 0 }
+.d-ledger h5 { font-family: var(--sans); font-weight: 600; font-size: var(--t-body); line-height: var(--t-body-lh) }
+.d-ledger p { margin-top: var(--sp-1); font-size: var(--t-ui); line-height: var(--t-ui-lh); color: var(--ink-70) }
+.on-dark .d-kick, .on-dark .d-stats span { color: var(--pi-dark-600) }
+.on-dark .d-display, .on-dark .d-h2 { color: var(--pi-dark-ink) }
+.on-dark .d-lead { color: var(--pi-dark-600) }
+
+/* ── copy library ── */
+.kit-copy-groups { columns: 2; column-gap: var(--sp-10) }
+.kit-copy-group { break-inside: avoid; margin-bottom: var(--sp-10) }
+.kit-copy-group h4 { font-family: var(--mono); font-weight: 400; font-size: var(--eb-2); letter-spacing: var(--eb-2-ls); text-transform: uppercase; color: var(--ink-55); padding-bottom: var(--sp-3); border-bottom: 1px solid var(--line-2) }
+.kit-line { display: grid; grid-template-columns: 1fr auto; gap: var(--sp-4); align-items: start; padding: var(--sp-4) 0; border-bottom: 1px solid var(--line) }
+.kit-line .t { font-size: var(--t-body); line-height: var(--t-body-lh); color: var(--ink) }
+.kit-line .t.serif { font-family: var(--serif); font-weight: var(--serif-w); font-size: var(--t-h4); line-height: var(--t-h4-lh) }
+.kit-line .t small { display: block; margin-top: var(--sp-1); font-size: var(--t-ui); color: var(--ink-70) }
+.kit-line .t em { display: block; margin-top: var(--sp-1); font-style: normal; font-family: var(--mono); font-size: var(--eb-4); letter-spacing: var(--eb-4-ls); text-transform: uppercase; color: var(--ink-55) }
+
+.copy { flex: none; font-family: var(--mono); font-size: var(--eb-4); letter-spacing: var(--eb-4-ls); text-transform: uppercase; color: var(--ink-55); background: transparent; border: 1px solid var(--line-2); border-radius: var(--r-md); padding: var(--sp-1) var(--sp-2); cursor: pointer }
+.copy:hover { color: var(--ink); border-color: var(--ink-35) }
+.copy.done { color: var(--ink); border-color: var(--ink) }
+
+.kit-voice { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--sp-5) }
+.kit-voice .card h3 { font-size: var(--t-h4); line-height: var(--t-h4-lh) }
+.kit-say { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sp-5); margin-top: var(--sp-5) }
+.kit-say > div { border-top: 2px solid var(--ink); padding-top: var(--sp-4) }
+.kit-say > div.no { border-top-color: var(--line-2) }
+.kit-say h5 { font-family: var(--mono); font-weight: 400; font-size: var(--eb-3); letter-spacing: var(--eb-3-ls); text-transform: uppercase; color: var(--ink-55) }
+.kit-say p { margin-top: var(--sp-3); font-family: var(--serif); font-weight: var(--serif-w); font-size: var(--t-h4); line-height: var(--t-h4-lh) }
+.kit-say .no p { color: var(--ink-55); text-decoration: line-through; text-decoration-color: var(--ink-35); text-decoration-thickness: 1px }
+
+/* ── imagery ── */
+.kit-media { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--sp-5) }
+.kit-media.two { grid-template-columns: repeat(2, minmax(0, 1fr)) }
+.kit-media.four { grid-template-columns: repeat(4, minmax(0, 1fr)) }
+.kit-media .stage { min-height: 0; padding: 0; aspect-ratio: 4 / 3; position: relative; display: block }
+.kit-media .stage img, .kit-media .stage video { position: absolute; inset: var(--sp-6); width: calc(100% - 2 * var(--sp-6)); height: calc(100% - 2 * var(--sp-6)); max-width: none; object-fit: contain }
+.kit-media .meta { flex-direction: column; align-items: flex-start }
+.kit-media .meta .kit-dl { margin-top: var(--sp-2) }
+.kit-media .meta .kit-dl a { font-size: var(--eb-4); padding: var(--sp-1) var(--sp-2) }
+.kit-media .meta p { font-size: var(--t-ui); line-height: var(--t-ui-lh); color: var(--ink-70) }
+.kit-tile.dark .meta p { color: var(--pi-dark-600) }
+.kit-tile.dark .kit-dl a { background: transparent; color: var(--pi-dark-ink); border-color: rgba(243, 239, 231, .24) }
+.kit-tile .stage.pixel img { image-rendering: pixelated }
+.kit-compare { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sp-2) }
+.kit-compare img { width: 100%; height: 560px; object-fit: contain; display: block; background: var(--bg); border: var(--edge); border-radius: var(--r-md) }
+@media (max-width: 720px) { .kit-compare img { height: 300px } }
+
+/* ── texture sample ── */
+.kit-texture { height: 280px; border: var(--edge); border-radius: var(--r-md); overflow: hidden; display: grid; place-items: center; text-align: center }
+.kit-texture p { font-family: var(--serif); font-weight: var(--serif-w); font-size: var(--t-h2); line-height: var(--t-h2-lh); background: var(--bg); padding: var(--sp-2) var(--sp-4) }
+.kit-devices { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--sp-5) }
+.kit-devices .stage { min-height: 180px; padding: var(--sp-8) }
+.kit-marks { display: flex; gap: var(--sp-6); font-family: var(--sans); font-size: var(--t-h2) }
+.kit-marks span { display: flex; flex-direction: column; align-items: center; gap: var(--sp-2) }
+.kit-marks small { font-family: var(--mono); font-size: var(--eb-4); letter-spacing: var(--eb-4-ls); text-transform: uppercase; color: var(--ink-55) }
+.kit-lines { width: 100%; display: grid; gap: var(--sp-5) }
+.kit-lines div { display: grid; grid-template-columns: 1fr auto; gap: var(--sp-4); align-items: center; font-family: var(--mono); font-size: var(--eb-4); letter-spacing: var(--eb-4-ls); text-transform: uppercase; color: var(--ink-55) }
+.kit-lines i { display: block }
+
+/* ── sections gallery ── */
+.kit-shots { display: grid; gap: var(--sp-14) }
+.kit-shot { display: grid; grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr); gap: var(--sp-10); align-items: start }
+.kit-shot figure { margin: 0; border: var(--edge); border-radius: var(--r-md); overflow: hidden; background: var(--face) }
+.kit-shot figure img { display: block; width: 100%; height: auto }
+.kit-shot .about { position: sticky; top: calc(var(--sp-16) + var(--sp-6)) }
+.kit-shot .about span { font-family: var(--mono); font-size: var(--eb-3); letter-spacing: var(--eb-3-ls); text-transform: uppercase; color: var(--ink-55) }
+.kit-shot .about h4 { margin-top: var(--sp-2); font-family: var(--serif); font-weight: var(--serif-w); font-size: var(--t-h3); line-height: var(--t-h3-lh) }
+.kit-shot .about p { margin-top: var(--sp-3); font-size: var(--t-body); line-height: var(--t-body-lh); color: var(--ink-70) }
+.kit-shot .about ul { margin: var(--sp-4) 0 0; padding: 0; list-style: none; display: grid; gap: var(--sp-2) }
+.kit-shot .about li { font-size: var(--t-ui); line-height: var(--t-ui-lh); color: var(--ink-70); padding-left: var(--sp-4); position: relative }
+.kit-shot .about li::before { content: ""; position: absolute; left: 0; top: .6em; width: var(--sp-2); height: 1px; background: var(--ink-35) }
+.kit-thumbs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--sp-5) }
+.kit-thumbs a { display: block; text-decoration: none; color: var(--ink) }
+.kit-thumbs img { display: block; width: 100%; height: auto; border: var(--edge); border-radius: var(--r-md) }
+.kit-thumbs b { display: block; margin-top: var(--sp-3); font-weight: 600; font-size: var(--t-ui) }
+.kit-thumbs span { display: block; font-size: var(--t-ui); color: var(--ink-70) }
+
+/* ── slides ── */
+.kit-slides { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--sp-5) }
+.kit-slides figure { margin: 0 }
+.kit-slides img { display: block; width: 100%; height: auto; border: var(--edge); border-radius: var(--r-md) }
+.kit-slides figcaption { margin-top: var(--sp-3); font-size: var(--t-ui); line-height: var(--t-ui-lh); color: var(--ink-70) }
+.kit-slides figcaption b { color: var(--ink); font-weight: 600 }
+.kit-grid16 { position: relative; aspect-ratio: 16 / 9; border: var(--edge); border-radius: var(--r-md); background: var(--face); overflow: hidden }
+.kit-grid16 .safe { position: absolute; left: 5.625%; right: 5.625%; top: 8.889%; bottom: 8.889%; outline: 1px dashed var(--accent); display: grid; grid-template-columns: repeat(12, 1fr); gap: 1.6% }
+.kit-grid16 .safe i { background: var(--wash-1) }
+.kit-grid16 .lab { position: absolute; font-family: var(--mono); font-size: var(--eb-4); letter-spacing: var(--eb-4-ls); text-transform: uppercase; color: var(--ink-55) }
+.kit-flow { counter-reset: flow; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 var(--sp-10) }
+.kit-flow li { list-style: none; display: grid; grid-template-columns: var(--sp-10) 1fr; padding: var(--sp-4) 0; border-top: 1px solid var(--line) }
+.kit-flow li::before { counter-increment: flow; content: counter(flow, decimal-leading-zero); font-family: var(--mono); font-size: var(--eb-3); letter-spacing: var(--eb-3-ls); color: var(--ink-55); padding-top: 4px }
+.kit-flow li b { display: block; font-family: var(--serif); font-weight: var(--serif-w); font-size: var(--t-h4); line-height: var(--t-h4-lh) }
+.kit-flow li span { display: block; margin-top: var(--sp-1); font-size: var(--t-ui); line-height: var(--t-ui-lh); color: var(--ink-70) }
+
+/* ── table ── */
+.kit-table { width: 100%; border-collapse: collapse; font-size: var(--t-ui) }
+.kit-table th, .kit-table td { text-align: left; padding: var(--sp-3) var(--sp-4) var(--sp-3) 0; border-top: 1px solid var(--line); vertical-align: top; line-height: var(--t-ui-lh) }
+.kit-table th { font-family: var(--mono); font-weight: 400; font-size: var(--eb-4); letter-spacing: var(--eb-4-ls); text-transform: uppercase; color: var(--ink-55); border-top: 0 }
+.kit-table td { color: var(--ink-70) }
+.kit-table td:first-child { color: var(--ink); font-weight: 600 }
+.kit-table td.m { font-family: var(--mono); font-size: var(--eb-3); color: var(--ink); white-space: nowrap }
+
+/* ── reference links ── */
+.kit-refs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--sp-5) }
+.kit-refs .card h3 { font-size: var(--t-h4); line-height: var(--t-h4-lh) }
+
+.kit-note { margin-top: var(--sp-6); padding: var(--sp-5) var(--sp-6); background: var(--warm); border-left: 2px solid var(--accent); font-size: var(--t-body); line-height: var(--t-body-lh); color: var(--ink-70); max-width: 80ch }
+.kit-note b { color: var(--ink) }
+
+.kit-foot { padding: var(--sp-16) 0 }
+.kit-foot .wrap { display: flex; justify-content: space-between; gap: var(--sp-8); align-items: flex-end; flex-wrap: wrap }
+.kit-foot img { height: var(--sp-8); width: auto }
+.kit-foot p { margin-top: var(--sp-4); font-family: var(--serif); font-weight: var(--serif-w); font-size: var(--t-h3); line-height: var(--t-h3-lh); color: var(--pi-dark-ink); max-width: 22ch }
+.kit-foot small { font-family: var(--mono); font-size: var(--eb-4); letter-spacing: var(--eb-4-ls); text-transform: uppercase; color: var(--pi-dark-600) }
+
+/* ── responsive ── */
+@media (max-width: 1000px) {
+  .kit-swatches { grid-template-columns: repeat(2, minmax(0, 1fr)) }
+  .kit-media, .kit-media.four, .kit-slides, .kit-refs, .kit-voice, .kit-devices { grid-template-columns: repeat(2, minmax(0, 1fr)) }
+  .kit-thumbs { grid-template-columns: repeat(3, minmax(0, 1fr)) }
+  .kit-shot { grid-template-columns: 1fr; gap: var(--sp-5) }
+  .kit-shot .about { position: static; order: -1 }
+  .kit-pairing { grid-template-columns: 1fr }
+  .kit-pairing .anno { border-left: 0; border-top: 1px solid var(--line) }
+  .kit-face { grid-template-columns: minmax(0, 1fr); gap: var(--sp-5) }
+}
+@media (max-width: 720px) {
+  .wrap { padding: 0 var(--sp-4) }
+  .kit-hero { padding: var(--sp-12) 0 }
+  .kit-hero h1 { font-size: var(--t-h1); line-height: var(--t-h1-lh) }
+  .kit-hero-grid { grid-template-columns: 1fr }
+  .kit-toc { grid-template-columns: repeat(2, minmax(0, 1fr)) }
+  .kit-bar img { display: none }
+  .kit-rules, .kit-logo-pair, .kit-partners, .kit-specs, .kit-pairs, .kit-say, .kit-flow,
+  .kit-media, .kit-media.two, .kit-media.four, .kit-slides, .kit-refs, .kit-voice, .kit-devices, .kit-swatches { grid-template-columns: 1fr }
+  .kit-sw.wide { grid-column: auto }
+  .kit-copy-groups { columns: 1 }
+  .kit-thumbs { grid-template-columns: repeat(2, minmax(0, 1fr)) }
+  .kit-glyphs { font-size: 56px !important }
+  .kit-glyphs.f-mono { font-size: 24px !important }
+  .kit-pairing .demo { padding: var(--sp-8) var(--sp-5) }
+  .d-display { font-size: var(--t-h1); line-height: var(--t-h1-lh) }
+  .d-h2 { font-size: var(--t-h2); line-height: var(--t-h2-lh) }
+  .d-stats, .d-ledger { grid-template-columns: 1fr }
+  .kit-tile .stage { padding: var(--sp-8) var(--sp-5); min-height: 180px }
+  .kit-space img { height: 64px }
+  .kit-space::before { inset: -32px }
+  .kit-space-wrap { padding: var(--sp-14) var(--sp-5) }
+}
+.kit-dl a[target]::before { content: none }
